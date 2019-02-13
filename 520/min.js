@@ -1,51 +1,77 @@
-var currentpos,timer;
-function initialize()
-{
-timer=setInterval ("scrollwindow ()",30);
+var currentpos, timer;
+
+function initialize() {
+    timer = setInterval("scrollwindow ()", 30);
 }
-function sc()
-{
-clearInterval(timer);
+
+function sc() {
+    clearInterval(timer);
 }
-function scrollwindow()
-{
-currentpos=document.body.scrollTop;
-window.scroll(0,++currentpos);
-if (currentpos !=document.body.scrollTop)
-sc();
+
+function scrollwindow() {
+    currentpos = document.body.scrollTop;
+    window.scroll(0, ++currentpos);
+    if (currentpos != document.body.scrollTop)
+        sc();
 }
-document.onmousedown=sc
-document.ondblclick=initialize
-function getUrlParam1(name){nk="XXXÎÒÒª¶ÔÄãËµ";
-var reg=new RegExp("(^|&)"+name+"=([^&]*)(&|$)");
-var r=window.location.search.substr(1).match(reg);
-if (r!=null) return unescape(r[2]);return nk;}  
-function getUrlParam3(name){nk="ÇéÈË½Ú¿ìÀÖ£¡";
-//http://yun.93me.com/ Ãâ·ÑÌá¹©PHPĞéÄâÖ÷»ú
-var reg=new RegExp("(^|&)"+name+"=([^&]*)(&|$)");
-var r=window.location.search.substr(1).match(reg);
-if (r!=null) return unescape(r[2]);return nk;}  
-function getUrlParam2(name){nk="xxx";
-var reg=new RegExp("(^|&)"+name+"=([^&]*)(&|$)");
-var r=window.location.search.substr(1).match(reg);
-if (r!=null) return unescape(r[2]);return nk;
+
+document.onmousedown = sc
+document.ondblclick = initialize
+
+function getUrlParam1(name) {
+    nk = "Lillian";
+    var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
+    var r = window.location.search.substr(1).match(reg);
+    if (r != null) return unescape(r[2]);
+    return nk;
 }
-function ok(){
-var a=document.form1.elements;
-if(a[0].value==""){alert("Ëı/ËûµÄÃû×ÖÄØ£¿");return false;}
-if(a[1].value==""){alert("ÄúµÄÃû×ÖÄØ£¿");return false;}
-if(a[2].value==""){alert("ÄúÏëÒªËµÔÚ»°ÄØ£¿");return false;}
-var b=a[0].name+"="+escape(a[0].value)+"&"+a[1].name+"="+escape(a[1].value)+"&"+a[2].name+"="+escape(a[2].value);
-var c=window.location.href;
-var d=c.split("?");
-var e=d[0]+"?"+b;
-//http://yun.93me.com/ Ãâ·ÑÌá¹©PHPĞéÄâÖ÷»ú
-window.clipboardData.setData('Text',e); 
-alert("¹§Ï²ÄúµÄ×£¸£ÒÑ³É¹¦Éú³É£¡");
-window.location.href=e;}
-function oCopy(obj)
-{obj.select(); 
-js=obj.createTextRange(); 
-js.execCommand("Copy");
-alert("¸ÃÍøÖ·ÒÑ¾­¸´ÖÆµ½ÄúµÄ¼ôÌù°åÖĞ£¬\n\nÄú¿ÉÒÔÊ¹ÓÃCtrl+V¿ì½İ¼üÕ³Ìùµ½QQ¡¢ÂÛÌ³¡¢²©¿ÍµÈ¡­¡­");} 
-//http://yun.93me.com/ Ãâ·ÑÌá¹©PHPĞéÄâÖ÷»ú
+
+function getUrlParam3(name) {
+    nk = "æƒ…äººèŠ‚å¿«ä¹ï¼";
+//http://yun.93me.com/ å…è´¹æä¾›PHPè™šæ‹Ÿä¸»æœº
+    var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
+    var r = window.location.search.substr(1).match(reg);
+    if (r != null) return unescape(r[2]);
+    return nk;
+}
+
+function getUrlParam2(name) {
+    nk = "Aaron";
+    var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
+    var r = window.location.search.substr(1).match(reg);
+    if (r != null) return unescape(r[2]);
+    return nk;
+}
+
+function ok() {
+    var a = document.form1.elements;
+    if (a[0].value == "") {
+        alert("å¥¹/ä»–çš„åå­—å‘¢ï¼Ÿ");
+        return false;
+    }
+    if (a[1].value == "") {
+        alert("æ‚¨çš„åå­—å‘¢ï¼Ÿ");
+        return false;
+    }
+    if (a[2].value == "") {
+        alert("æ‚¨æƒ³è¦è¯´åœ¨è¯å‘¢ï¼Ÿ");
+        return false;
+    }
+    var b = a[0].name + "=" + escape(a[0].value) + "&" + a[1].name + "=" + escape(a[1].value) + "&" + a[2].name + "=" + escape(a[2].value);
+    var c = window.location.href;
+    var d = c.split("?");
+    var e = d[0] + "?" + b;
+//http://yun.93me.com/ å…è´¹æä¾›PHPè™šæ‹Ÿä¸»æœº
+    window.clipboardData.setData('Text', e);
+    alert("æ­å–œæ‚¨çš„ç¥ç¦å·²æˆåŠŸç”Ÿæˆï¼");
+    window.location.href = e;
+}
+
+function oCopy(obj) {
+    obj.select();
+    js = obj.createTextRange();
+    js.execCommand("Copy");
+    alert("è¯¥ç½‘å€å·²ç»å¤åˆ¶åˆ°æ‚¨çš„å‰ªè´´æ¿ä¸­ï¼Œ\n\næ‚¨å¯ä»¥ä½¿ç”¨Ctrl+Vå¿«æ·é”®ç²˜è´´åˆ°QQã€è®ºå›ã€åšå®¢ç­‰â€¦â€¦");
+}
+
+//http://yun.93me.com/ å…è´¹æä¾›PHPè™šæ‹Ÿä¸»æœº
